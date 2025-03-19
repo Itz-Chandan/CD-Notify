@@ -12,9 +12,9 @@ jobs:
       - name: Run Tests
         run: npm test
 
-     - name: Notify Slack on Failure
-       if: failure()
-       uses: rtCamp/action-slack-notify@v2
-       with:
+      - name: Notify Slack on Failure
+        if: failure()
+        uses: rtCamp/action-slack-notify@v2
+        with:
          webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
          message: "Build Failed! Check the logs."
